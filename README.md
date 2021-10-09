@@ -11,7 +11,7 @@
 При добавлении новых выражений в файл необходимо завершить ввод переводом строки.  
 
 ## Использование
-Запуск скрипта: ./calc.sh input1.txt input2.txt <file> … <file>  
+Запуск скрипта: ./calc.sh input1.txt input2.txt \<file\> … \<file\>  
 
 input1.txt, input2.txt, input3.txt, input4.txt - файлы с тестовыми выражениями  
 
