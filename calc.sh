@@ -2,6 +2,7 @@
 
 PARAMS=("$@")
 RES=-32768
+EXPR_COUNTER=0
 
 function test_expr() {
   (( "$1" )) 2>/dev/null
@@ -18,10 +19,12 @@ for file in ${PARAMS[@]}; do
     EXP_RES=$(( $expression ))
     echo "result: $EXP_RES"
     [ $EXP_RES -gt $RES ] && RES=$EXP_RES
+    EXPR_COUNTER=$(( $EXPR_COUNTER + 1 ))
   done < $file
 done
 
 echo
 echo "files processed: ${#PARAMS[@]}"
-echo "the highest value: $RES"
+echo "expressions processed: $EXPR_COUNTER"
+[ $EXPR_COUNTER -gt 1 ] && echo "the highest value: $RES"
 
